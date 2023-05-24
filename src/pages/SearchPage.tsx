@@ -4,7 +4,7 @@ import useSkiddleSearch from "../hooks/useSkiddleSearch";
 
 const SearchPage = () => {
 	const { keyword } = useParams();
-	const { data: events, isLoading, error } = useSkiddleSearch(keyword!);
+	const { data: events, isLoading, error } = useSkiddleSearch(keyword ?? "");
 
 	if (isLoading) return <h3>Loading...</h3>;
 

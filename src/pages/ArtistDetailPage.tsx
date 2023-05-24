@@ -4,7 +4,7 @@ import useArtist from "../hooks/useArtist";
 const EventDetailPage = () => {
 	const { id } = useParams();
 
-	const { data, isLoading, error } = useArtist(id!);
+	const { data, isLoading, error } = useArtist(id ?? "");
 
 	if (isLoading) return <h3>Loading...</h3>;
 

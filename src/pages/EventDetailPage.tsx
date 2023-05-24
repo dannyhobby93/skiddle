@@ -4,7 +4,7 @@ import useSkiddleEvent from "../hooks/useSkiddleEvent";
 const EventDetailPage = () => {
 	const { id } = useParams();
 
-	const { data, isLoading, error } = useSkiddleEvent(id!);
+	const { data, isLoading, error } = useSkiddleEvent(id ?? "");
 
 	if (isLoading) return <h3>Loading...</h3>;
 

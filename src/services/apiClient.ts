@@ -4,7 +4,7 @@ export interface FetchResponse<T> {
 	error: number;
 	totalcount: number;
 	pagecount: number;
-	results: T[];
+	results: T[] | T;
 }
 
 export interface SingleResponse<T> {
@@ -42,7 +42,7 @@ class APIClient<T> {
 
 	get = (id: string) => {
 		return axiosInstance
-			.get<SingleResponse<T>>(this.endpoint + "/" + id)
+			.get<FetchResponse<T>>(this.endpoint + "/" + id)
 			.then((res) => res.data);
 	};
 }
